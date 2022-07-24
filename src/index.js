@@ -13,10 +13,13 @@ import Pokemon from './Pokemon/Pokemon';
 import Historial from './Historial/Historial';
 import '@fontsource/roboto'
 import './index.css'
+//Import del elemento de imagen 
+import Imagen from './img/img';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <Imagen/>
     <BrowserRouter>
       <Routes>
         <Route path='/' element={<Root />}>
