@@ -1,15 +1,15 @@
-import {createTheme} from '@mui/material'
+import { createTheme } from '@mui/material'
 
 const theme = createTheme({
     palette: {
-        primary:{
+        primary: {
             main: "#1b479e",
         },
         secondary: {
             main: "#f977cc"
         },
         pokemon: {
-            main: "#CACA"
+            main: "#f977cc"
         }
     }
 })
