@@ -9,6 +9,8 @@ import {
 } from 'react-router-dom';
 import Combat from './Combat/Combat';
 import List from './List/List';
+import Pokemon from './Pokemon/Pokemon';
+import Historial from './Historial/Historial';
 import '@fontsource/roboto'
 import './index.css'
 
