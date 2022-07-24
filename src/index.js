@@ -2,10 +2,10 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import reportWebVitals from './reportWebVitals';
 import Root from './Root/Root';
-import { 
+import {
   BrowserRouter,
   Routes,
-  Route 
+  Route
 } from 'react-router-dom';
 import Combat from './Combat/Combat';
 import List from './List/List';
@@ -22,6 +22,8 @@ root.render(
         <Route path='/' element={<Root />}>
           <Route path='/combat' element={<Combat />} />
           <Route path='/pokedex' element={<List />} />
+          <Route path='/pokemon' element={<Pokemon />} />
+          <Route path='/historial' element={<Historial />} />
         </Route>
       </Routes>
     </BrowserRouter>
