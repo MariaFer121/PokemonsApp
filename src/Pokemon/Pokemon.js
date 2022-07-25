@@ -151,36 +151,21 @@ const Pokemon = (props) => {
 
             <Input type="text"
                 placeholder="Buscar Pokemon"
-                onChange={
-                    (e) => handleChange(e)
-                }
-            /> {
-            /* Boton de busqueda */}
+                onChange={(e) => handleChange(e)}
+            /> {/* Boton de busqueda */}
             <Button variant="contained"
-                endIcon={
-                    < SearchIcon />
-                }
-                onClick={
-                    handleClick
-                } >
-                Buscar </Button> {
-            /* Carta en la cual se ve la imagen del pokemon y sus atrivutos */}
+                endIcon={< SearchIcon />}
+                onClick={handleClick} >
+                Buscar </Button> 
+                {/* Carta en la cual se ve la imagen del pokemon y sus atrivutos */}
             <Card sx={{ minWidth: 275 }} >
                 <CardContent className="Imagen" >
                     <CardMedia component="img"
-                        image={
-                            url
-                        }
-                        alt={
-                            descripcion
-                        }
+                        image={url }
+                        alt={descripcion }
                     /> <CardMedia component="img"
-                        image={
-                            url1
-                        }
-                        alt={
-                            descripcion
-                        }
+                        image={url1}
+                        alt={descripcion}
                     /> </CardContent>
                 {/* RadioButton */}
                 <Radio checked={
