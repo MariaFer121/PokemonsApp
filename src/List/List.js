@@ -1,26 +1,50 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState } from 'react';
+import Card from '../Card/Card';
+import './List.css';
+import { Input } from "@mui/material"
+const List = () => {
+    const [search, setSearch] = useState('');
+    const [pokemons, setPokemons] = useState(null);
+    //filta los pokemones por el nombre 
+    const s = search && search.toLowerCase();
+    const filtered =
+        !pokemons || !s
+            ? pokemons
+            : pokemons.filter(({ name }) =>
+                name.toLowerCase().includes(s)
+            );
 
-const List = (props) => {
-
-    const [pokemons, setPokemons] = useState([])
-
-    useEffect( () => {
+    useEffect(() => {
         fetch('https://pokeapi.co/api/v2/pokemon?limit=100000&offset=0')
-            .then(res => res.json())
-            .then( (data) => {
-                console.log(data)
-                setPokemons(data.results)
-            })
-    }, [])
+            .then((r) => r.json())
+            .then((json) => {
+                setPokemons(json.results);
+            });
+    }, []);
+
+    if (!pokemons) {
+        return null;
+    }
 
     return (
         <>
-            Lista de Pokemones ! <br />
-            { pokemons.map( (pokemon) => {
-                return (<div>{pokemon.name}</div>)
-            } ) }
-        </>
-    )
-}
+            <Input
+                placeholder="Buscar Pokemon"
+                type="search"
+                value={search}
+                onChange={(ev) => setSearch(ev.tanger.name)}
 
-export default List
+            />
+            {/* Muestra la lista de pokemones */}
+            {filtered && (
+                <ul className="PokemonList">
+                    {filtered.map(({ name }) => (
+                        <Card key={name} name={name} />
+                    ))}
+                </ul>
+            )}
+        </>
+    );
+};
+
+export default List;
