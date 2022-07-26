@@ -13,6 +13,7 @@ import {
     Button,
     CardMedia,
     Radio
+    
 } from "@mui/material"
 // icono de buscar
 import SearchIcon from '@mui/icons-material/Search';
@@ -156,50 +157,54 @@ const Pokemon = (props) => {
             <Button variant="contained"
                 endIcon={< SearchIcon />}
                 onClick={handleClick} >
-                Buscar </Button> 
-                {/* Carta en la cual se ve la imagen del pokemon y sus atrivutos */}
+                Buscar </Button>
+            {/* Carta en la cual se ve la imagen del pokemon y sus atrivutos */}
             <Card sx={{ minWidth: 275 }} >
                 <CardContent className="Imagen" >
                     <CardMedia component="img"
-                        image={url }
-                        alt={descripcion }
+                        image={url}
+                        alt={descripcion}
                     /> <CardMedia component="img"
                         image={url1}
                         alt={descripcion}
                     /> </CardContent>
                 {/* RadioButton */}
-                <Radio checked={
-                    radio === 'Normal' ? true : false
-                }
-                    onChange={
-                        handleRadio
-                    }
-                    value='Normal'
-                    hidden={
-                        oculto
-                    }
+                
 
-                /> <Radio checked={
-                    radio === 'Shiny' ? true : false
-                }
-                    onChange={
-                        handleRadio
+                    <Radio checked={
+                        radio === 'Normal' ? true : false
                     }
-                    value='Shiny'
-                    hidden={
-                        oculto1
+                        onChange={
+                            handleRadio
+                        }
+                        value='Normal'
+                        hidden={
+                            oculto
+                        }
+
+                    /> <Radio checked={
+                        radio === 'Shiny' ? true : false
                     }
-                /> <Radio checked={
-                    radio === 'Female' ? true : false
-                }
-                    onChange={
-                        handleRadio
+                        onChange={
+                            handleRadio
+                        }
+                        value='Shiny'
+                        hidden={
+                            oculto1
+                        }
+                    /> <Radio checked={
+                        radio === 'Female' ? true : false
                     }
-                    value='Female'
-                    hidden={
-                        oculto2
-                    }
-                /> <CardContent >
+                        onChange={
+                            handleRadio
+                        }
+                        value='Female'
+                        hidden={
+                            oculto2
+                        }
+                    />
+                
+                <CardContent >
                     {/* Muestra el nombre y el numero del pokemon */}
                     <Typography align="center"
                         gutterBottom variant="h5"
@@ -215,7 +220,7 @@ const Pokemon = (props) => {
 
                     </Typography> {
             /* contiene las caracteristicas del pokemon buscado */}
-                    <CardContent >
+                    <CardContent className="forma7" >
 
                         <Typography paragraph >
                             Caracteriticas:

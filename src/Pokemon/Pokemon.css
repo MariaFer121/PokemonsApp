@@ -1,6 +1,13 @@
 .Imagen {
     padding: 0%;
-    display:inline-flex;
+    display: inline-flex;
     text-align: center;
     width: 45%;
+}
+
+.forma7 {
+    margin: 5% 60% 0.5% 5%;
+    border: 6px dotted black;
+    background-color: rgb(255, 232, 232);
+    text-align: start;
 }
